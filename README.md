@@ -7,5 +7,5 @@ System Info :
 - Hardware : [ThinkPad t480](https://github.com/NixOS/nixos-hardware/blob/master/lenovo/thinkpad/t480/default.nix)
 - Desktop Environment : GNOME, (and sway)
 - Flakes : Yes
-- Version : 23.11
+- Version : 24.05
 - Home Manager : Yes, as NixOS Module
