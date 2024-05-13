@@ -1,5 +1,6 @@
 # NixOS configuration
 This is my NixOS configuration, applied to my current machine. You can apply, edit, and use it as you want.
+
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
 System Info : 
