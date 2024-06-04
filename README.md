@@ -8,6 +8,5 @@ System Info :
 - Display Manager : [ly](https://github.com/fairyglade/ly)
 - Desktop Environment : [GNOME](https://www.gnome.org/), (and [swayfx](https://github.com/WillPower3309/swayfx))
 - Flakes : Yes
-- Version : 24.05
 - Home Manager : Yes, as NixOS Module
-- Version : unstable
+- Version : 24.11
