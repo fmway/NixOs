@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-24_05.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-23_11.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/master";
     fingerprint-sensor = {
@@ -14,7 +15,7 @@
     nixgl.url = "github:nix-community/NixGL";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, fingerprint-sensor, home-manager, nixpkgs-23_11, nixpkgs-24_05, ... } @ inputs: let
+  outputs = { self, nixpkgs, nixos-hardware, fingerprint-sensor, home-manager, nixpkgs-23_11, nixpkgs-24_05, nixpkgs-master, ... } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -45,7 +46,7 @@
       } 
     ]; 
 
-  in {
+  in rec {
     nixosConfigurations = {
       Namaku1801 = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -57,8 +58,6 @@
         ];
       };
     };
-    packages.${system} = let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in pkgs;
+    packages.${system} = nixosConfigurations.Namaku1801.pkgs;
   };
 }
